@@ -1,9 +1,20 @@
+import { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import { AuthContext } from '../../auth/authContext';
+import { types } from '../../types/typex';
 
 export const Navbar = () => {
+
+    const { user, dispatch } = useContext( AuthContext );
+
     const navigate = useNavigate();
     const handleLogout = () => {
+
+        dispatch({
+            type: types.logout
+        });
+        localStorage.removeItem('user');
+
         navigate("/login", {
             replace: true
         });
@@ -31,7 +42,7 @@ export const Navbar = () => {
                     </li>
                 </ul>
             </div>
-            <span>Sergio Hernández</span>
+            <span>{ user.name }</span>
             <button 
                 className="nav-item nav-link btn text-white" 
                 type="button" 

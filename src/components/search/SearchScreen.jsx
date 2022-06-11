@@ -11,7 +11,7 @@ export const SearchScreen = () => {
   const location = useLocation();
   const { q = '' } = queryString.parse(location.search);
   
-  const [ formValue, handleChange, reset ] = useForm({searchText:q})
+  const [ formValue, handleChange ] = useForm({searchText:q})
   const { searchText } = formValue;
 
   const heroesFilted = useMemo( () => getHeroesByName( q ), [q]);

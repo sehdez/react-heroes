@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { heroImages } from "../../helpers/heroImages";
+
+
 export const HeroCard = ({ 
     id,
     superhero,
     alter_ego}) => {
-        const imagePath = `./assets/img/heroes/${id}.jpg`
+        const imagePath = heroImages(`./${ id }.jpg`)
     
     return (
         <div className='p-1 animate__animated animate__jackInTheBox'> 

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 import { getHeroById } from "../../selectors/getHeroById";
-import { heroImages } from "../../helpers/heroImages";
+// import { heroImages } from "../../helpers/heroImages";
 
 export const HeroScreen = () => {
   
@@ -17,7 +17,8 @@ export const HeroScreen = () => {
   if (!heroe) {
     return <Navigate to="../" />;
   }
-  const pathImg = heroImages(`./${heroe.id}.jpg`)
+  // const pathImg = heroImages(`./${heroe.id}.jpg`)
+  const pathImg = `./assets/img/heroes/${ heroe.id }.jpg`
     
 
   const handleRegresar = () => {

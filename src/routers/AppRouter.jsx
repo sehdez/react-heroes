@@ -1,5 +1,5 @@
 import { 
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route, 
   Routes } from 'react-router-dom'
 
@@ -11,6 +11,7 @@ import { PublicRoute } from './PublicRoute'
 
 export const AppRouter = () => {
   return (
+    
     <Router>
         <div>
             <Routes>
